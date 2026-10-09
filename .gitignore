@@ -1,0 +1,14 @@
+node_modules/
+.test-tmp/
+dist/
+build/
+coverage/
+newsletter-data/
+demo-data/
+outbox/
+*.eml
+.env*
+newsletter.config.json
+*.local.json
+*.tmp
+*.lock.local

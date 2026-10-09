@@ -1,0 +1,20 @@
+PickBits Newsletter 0.1.0
+
+Node 22+, ESM, Apache-2.0, plain node:http, one runtime dependency: nodemailer.
+Purpose: one small business owns its contact files and sends newsletters through its own mailbox.
+Entry point: bin/newsletter.mjs; installed bin: newsletter.
+Commands: init, set-password, import, export, send --dry-run, doctor, serve, demo.
+Configuration: newsletter.config.example.json; private copy: newsletter.config.json.
+Data: contacts.json includes suppression; campaigns/ holds drafts and per-campaign journals; delivery.json holds quota state.
+Consent: imports and manual additions require owner attestation and a source and become subscribed. Imports can instead await confirmation via journaled, throttled requests. Only fresh public double opt-in clears suppression.
+Public routes: /signup, /confirm/<token>, /u/<token>; publish only these through an HTTPS proxy.
+Admin: single scrypt password, signed HttpOnly SameSite=Strict session, exact Origin check on every admin POST.
+Delivery: throttled SMTP or capture, durable intent before attempt, uncertain attempts never automatically retried.
+Unsubscribe: GET displays confirmation; POST acts; signed URL and one-click headers; provider must supply suitable DKIM.
+Demo: npm run demo; synthetic Tucson bakery, 40 contacts, two drafts, one fabricated sent campaign; loopback 4206 only; no SMTP.
+Offline gates: npm test; npm run leakscan; npm run consumer; npm run preflight.
+Consumer cache: prime with npm ci --cache .test-tmp/npm-cache.
+Limits: no deliverability service, tracking, analytics, automations, inbox processing, OAuth refresh or exact-once SMTP guarantee.
+Trust boundary: contact data, CSV and Markdown are untrusted; no raw HTML or remote attachments.
+Read README.md, SECURITY.md and DEMO.md before operating or modifying.
+Output attribution: Made with PickBits Newsletter.

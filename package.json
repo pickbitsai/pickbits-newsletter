@@ -1,0 +1,27 @@
+{
+  "name": "pickbits-newsletter",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Keep your newsletter list in your own files and send through your own mailbox",
+  "type": "module",
+  "license": "Apache-2.0",
+  "author": "Mark Pickering and PICKBITS LLC",
+  "engines": {
+    "node": ">=22"
+  },
+  "bin": {
+    "newsletter": "bin/newsletter.mjs"
+  },
+  "scripts": {
+    "start": "node bin/newsletter.mjs serve",
+    "demo": "node bin/newsletter.mjs demo",
+    "set-password": "node bin/newsletter.mjs set-password",
+    "test": "node --test test/*.test.mjs",
+    "leakscan": "node test/leakscan.mjs",
+    "consumer": "node test/consumer-install.mjs",
+    "preflight": "npm test && npm run leakscan && npm run consumer"
+  },
+  "dependencies": {
+    "nodemailer": "10.0.16"
+  }
+}

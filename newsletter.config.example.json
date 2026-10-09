@@ -1,0 +1,27 @@
+{
+  "businessName": "Juniper Crumb Bakery",
+  "postalAddress": "1842 N Stone Ave, Tucson, AZ 85705",
+  "logoUrl": "",
+  "sender": "bakery@example.com",
+  "publicUrl": "https://example.com",
+  "adminOrigin": "http://127.0.0.1:4206",
+  "host": "127.0.0.1",
+  "port": 4206,
+  "trustProxy": false,
+  "dataDir": "./newsletter-data",
+  "secret": "",
+  "passwordHash": "",
+  "transport": "capture",
+  "messagesPerMinute": 20,
+  "dailyCap": 400,
+  "smtp": {
+    "preset": "generic",
+    "host": "smtp.example.com",
+    "port": 587,
+    "secure": false,
+    "user": "bakery@example.com",
+    "authType": "password",
+    "passwordEnv": "NEWSLETTER_SMTP_PASSWORD",
+    "accessTokenEnv": "NEWSLETTER_SMTP_ACCESS_TOKEN"
+  }
+}
